@@ -1309,7 +1309,7 @@ export const DealDetailModal: React.FC<DealDetailModalProps> = ({ dealId, isOpen
   }
 
   return (
-    <FocusTrap active={isOpen} onEscape={onClose}>
+    <FocusTrap active={isOpen && !Boolean(deleteId) && !showLossReasonModal} onEscape={onClose}>
       <div
         // Backdrop + positioning wrapper. Clicking outside the panel should close the modal.
         // No desktop, este modal não deve cobrir a sidebar de navegação.
